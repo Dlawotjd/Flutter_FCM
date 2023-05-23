@@ -4,9 +4,6 @@ const schedule = require('node-schedule');
 
 var serviceAccount = require("../config/push_key.json");
 
-// const certPath = admin.credential.cert(serviceAccount);
-// var FCM = new fcm(certPath)
-
 const sendPushNotification = (req, res, next) => {
 
     try {
@@ -54,7 +51,8 @@ const connection = mysql.createConnection({
     user:'uit',
     password:'Hoseo12345^',
     port:3308,
-    database:'Flutter_project'
+    database:'Flutter_project',
+    socketPath:'/run/mysqld/mysqld.sock'
 });
 
 connection.connect( function(err){
